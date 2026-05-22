@@ -44,14 +44,14 @@ function LectureCard(props) {
     <Card className="lecture-card">
       <Card.Header>{props.lecture.title}</Card.Header>
       <Card.Body>
-        <p>{props.lecture.description}</p>
+        <p className="card-body-desc">{props.lecture.description}</p>
 
         {props.view === "student" && (
-          <>
+          <div className="viewLectureBtn">
             <Link className="viewLectureBtn" to={`${props.lecture.id}`}>
-              <Button>Join Lecture</Button>
+              <Button className="card-action-button">Join Lecture</Button>
             </Link>
-          </>
+          </div>
         )}
 
         {props.view === "teacher" && (

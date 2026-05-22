@@ -111,9 +111,13 @@ body {
 }
 
 .lectures-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(500px, 29%)
+  ); /* fixed 300px width */
+  justify-content: start; /* gaps expand/contract */
+  gap: 1rem;
 }
 
 #lectures-subtitle {
@@ -126,13 +130,20 @@ body {
   min-width: 500px;
   min-height: 150px;
   max-width: 500px;
-  max-height: 150px;
-  width: 500px;
-  height: 250px;
-  margin: 5px;
-  width: 29%;
+  max-height: 250px;
 }
 
+.card-body-desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card-action-button {
+  margin-top: auto;
+}
 .viewPastLectureBtn {
   padding: 5px;
 }
